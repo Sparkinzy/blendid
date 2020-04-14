@@ -60,7 +60,7 @@ const htmlTask = function() {
     .pipe(templateParser)
     .on('error', handleErrors)
     .pipe(gulpif(global.production, htmlmin(TASK_CONFIG.html.htmlmin)))
-    .pipe(gulp.destpaths.finalDest)
+    .pipe(gulp.dest(paths.finalDest))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 }
